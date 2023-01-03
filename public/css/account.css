@@ -1,0 +1,15 @@
+button a {
+    color: #ffff;
+    text-decoration: none;
+}
+button a:hover {
+    color: #ffff;
+}
+.flex-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.flex-container button {
+    margin: 5px;
+}
