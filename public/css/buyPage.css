@@ -1,0 +1,21 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body div {
+    box-shadow: 0px 0px 10px 0px rgb(0 0 0 / 30%);
+    text-align: center;
+    width: 70%;
+    height: 250px;
+    padding: 35px;
+}
+form input {
+    width: 30%;
+}
+form button {
+    margin: 10px;
+}

@@ -18,8 +18,8 @@
     <div class="flex-container">
         <p>{{  $item['Item'] }}</p>
         <p>PKR {{  $item['Price'] }} /-</p>
-        <button class=" btn btn-sm btn-primary"><a href="">Buy</a></button>
-        <button class=" btn btn-sm btn-primary"><a href="/cart/{{$data->id}}/{{$item['id']}}">Remove from cart</a></button>
+        <button class=" btn btn-md btn-primary"><a href="/cart/buy/{{$item['id']}}/{{$data->id}}">Buy</a></button>
+        <button class=" btn btn-sm btn-primary"><a href="/cart/remove/{{$data->id}}/{{$item['id']}}">Remove from cart</a></button>
     </div>
     @endforeach
 </body>

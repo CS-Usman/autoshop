@@ -139,5 +139,32 @@ class UsersControllers extends Controller
         return redirect("/cart");
        
     }
+
+    public function buyItem(Request $request,$item_id,$user_id)
+    {
+        
+        $item = Admin::find($item_id);
+        $user = userInfos::find($user_id);
+
+        $tmp_cart = $user->cart;
+        $index = array_search($item_id,$tmp_cart);
+        array_splice($tmp_cart,$index,1);
+        
+        $user->cart = $tmp_cart;
+        $user->save();
+        
+        $itemQty = $request->get('qty');
+        $price = $item->Price;
+        $amount = $itemQty * $price;
+        return view('greetUser')->with(['amount'=>$amount]);
+        
+    }
+
+    public function viewBuyItem($item_id,$user_id)
+    {
+        $item = Admin::find($item_id);
+        $user = userInfos::find($user_id);
+        return view("buyItem")->with(['item'=>$item,'data'=>$user]);
+    }
 }
 

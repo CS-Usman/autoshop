@@ -38,4 +38,7 @@ Route::get('/account/cart/{item_id}',[UsersControllers::class,'addToCart'])->nam
 // view cart
 Route::get('/cart',[UsersControllers::class,'viewCart']);
 // remove from cart
-Route::get('/cart/{user_id}/{item_id}',[UsersControllers::class,'removeItemFromCart']);
+Route::get('/cart/remove/{user_id}/{item_id}',[UsersControllers::class,'removeItemFromCart']);
+// buy Item
+Route::get('/cart/buy/{item_id}/{user_id}',[UsersControllers::class,'viewBuyItem']);
+Route::post('/cart/buy/{item_id}/{user_id}',[UsersControllers::class,'buyItem']);
